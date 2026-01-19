@@ -10,6 +10,12 @@ class Controller:
     def handle_crea_grafo(self, e):
         """ Handler per gestire creazione del grafo """""
         # TODO
+        try:
+            year = int(self._view.dd_anno.value)
+        except Exception:
+            self._view.show_alert("Anno Invalido")
+            return
+        self._model.build_grafo(year)
 
     def handle_dettagli(self, e):
         """ Handler per gestire i dettagli """""
